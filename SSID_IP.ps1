@@ -13,3 +13,7 @@ $Private | Out-File -FilePath .\Private.log
 [System.Net.Dns]::GetHostByAddress($Private).Hostname | Out-File -FilePath .\HostName.log
 
 Compress-Archive -U -Path .\*.log -DestinationPath $IP_Zip
+rm .\*.log
+
+Write-Host "Saved IP Addresses to: $IP_Zip"
+Write-Host "Saved SSID Profiles to: $SSID_Zip"
