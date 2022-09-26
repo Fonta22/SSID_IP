@@ -1,4 +1,6 @@
-xml = open('Wi-Fi-Mi 11i.xml')
+import sys
+
+xml = open(sys.argv[1])
 xml = xml.read()
 
 lines = xml.split('\n')
@@ -8,8 +10,16 @@ for line in lines:
         keyLine = line
     if 'name' in line:
         nameLine = line
+    if 'protected' in line:
+        protectedLine = line
 
-key = keyLine.split('\t').pop().split('>')[1].split('<')[0]
-name = nameLine.split('\t').pop().split('<name>').pop().split('</name>')[0]
+key = keyLine.replace('\t', '').replace('<keyMaterial>', '').replace('</keyMaterial>', '')
+name = nameLine.replace('\t', '').replace('<name>', '').replace('</name>', '')
+protected = protectedLine.replace('\t', '').replace('<protected>', '').replace('</protected>', '')
 
-print(name)
+if protected == 'false':
+    protected = False
+elif protected == 'true':
+    protected == True
+
+print(f'Name: {name}\nKey Material: {key}\nProtected: {protected}')
