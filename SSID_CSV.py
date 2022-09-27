@@ -24,6 +24,7 @@ def getData(file, csv):
 
     try:
         protected = protectedLine.replace('\t', '').replace('<protected>', '').replace('</protected>', '')
+
         if protected == 'false':
             protected = False
         elif protected == 'true':
@@ -32,12 +33,14 @@ def getData(file, csv):
         protected = True
     
     csv.write(f'{name},{key},{protected}\n')
+    print(f'    Name: {name}')
+    print(f'    Key Material: {key}')
+    print(f'    Protected: {protected}\n')
 
 if __name__ == '__main__':
     csv = open('SSID.csv', 'w')
     csv.write('Name,Key Material,Protected\n')
 
-    # for all '.\Wi-Fi*.xml'
     try:
         files = glob.glob(f'{sys.argv[1]}/Wi-Fi*.xml')
     except:

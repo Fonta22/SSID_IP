@@ -13,13 +13,21 @@ for line in lines:
     if 'protected' in line:
         protectedLine = line
 
-key = keyLine.replace('\t', '').replace('<keyMaterial>', '').replace('</keyMaterial>', '')
-name = nameLine.replace('\t', '').replace('<name>', '').replace('</name>', '')
-protected = protectedLine.replace('\t', '').replace('<protected>', '').replace('</protected>', '')
+try:
+    key = keyLine.replace('\t', '').replace('<keyMaterial>', '').replace('</keyMaterial>', '')
+except:
+    key = ''
 
-if protected == 'false':
-    protected = False
-elif protected == 'true':
-    protected == True
+name = nameLine.replace('\t', '').replace('<name>', '').replace('</name>', '')
+
+try:
+    protected = protectedLine.replace('\t', '').replace('<protected>', '').replace('</protected>', '')
+
+    if protected == 'false':
+        protected = False
+    elif protected == 'true':
+        protected == True
+except:
+    protected = True
 
 print(f'Name: {name}\nKey Material: {key}\nProtected: {protected}')
