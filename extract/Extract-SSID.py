@@ -1,6 +1,8 @@
 import glob
 import sys
 
+csv_name = '.\\Credentials.csv'
+
 def getData(file, csv):
     xml = open(file)
     xml = xml.read()
@@ -38,7 +40,7 @@ def getData(file, csv):
     print(f'    Protected: {protected}\n')
 
 if __name__ == '__main__':
-    csv = open('SSID.csv', 'w')
+    csv = open(csv_name, 'w')
     csv.write('Name,Key Material,Protected\n')
 
     try:
@@ -50,4 +52,4 @@ if __name__ == '__main__':
         print(i.replace('/', '\\').replace('.\\', ''))
         getData(i, csv)
     
-    print('\nExtracted data to .\SSID.csv')
+    print('\nExtracted data to ' + csv_name)
