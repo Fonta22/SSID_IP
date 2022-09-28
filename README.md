@@ -9,6 +9,8 @@
 - **Runs** the script
 - **Deletes** the script after it has run
 
+> See the [payloads](https://github.com/Fonta22/SSID_IP/tree/main/payloads) folder.
+
 ## PowerShell Script Payload
 [SSID_IP.ps1](https://github.com/Fonta22/SSID_IP/blob/main/SSID_IP.ps1) PowerShell Script.
 
