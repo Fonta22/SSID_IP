@@ -16,16 +16,16 @@
 
 [SSID_IP.ps1](https://github.com/Fonta22/SSID_IP/blob/main/SSID_IP.ps1) PowerShell Script.
 
-This script extracts the **SSID profiles** saved in the target machine, in **XML** files, and compresses them into a **Zip** file.
+This script exports the **SSID profiles** saved in the target machine, in **XML** files. Using PowerShell commands and making a Web Request, gets the private and public IP address and the Host Name of the machine. This data gets stored in a CSV file.
 
-After, using PowerShell commands and making a Web Request, gets the private and public IP address and the Host Name of the machine. This data gets stored in a CSV file.
+After, compresses all the files into a **Zip** file.
 
 ```
 📂SSID_Profiles.zip
 ┣ 📜Wi-Fi-WIFI_1.xml
 ┣ 📜Wi-Fi-WIFI_2.xml
-┗ 📜Wi-Fi-WIFI_3.xml
-📜IP_Addresses.csv
+┣ 📜Wi-Fi-WIFI_3.xml
+┗ 📜IP_Addresses.csv
 ```
 
 ### CSV Example
