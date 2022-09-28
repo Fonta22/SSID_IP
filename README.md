@@ -1,4 +1,5 @@
 # SSID_IP
+
 **Rubber Ducky** payload to extract the **SSID profiles** and the **IP addresses** of a **Windows machine**.
 
 ## Rubber Ducky Payload
@@ -12,6 +13,7 @@
 > See the [payloads](https://github.com/Fonta22/SSID_IP/tree/main/payloads) folder.
 
 ## PowerShell Script Payload
+
 [SSID_IP.ps1](https://github.com/Fonta22/SSID_IP/blob/main/SSID_IP.ps1) PowerShell Script.
 
 This script extracts the **SSID profiles** saved in the target machine, in **XML** files, and compresses them into a **Zip** file.
