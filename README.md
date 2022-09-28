@@ -14,7 +14,7 @@
 
 This script extracts the **SSID profiles** saved in the target machine, in **XML** files, and compresses them into a **Zip** file.
 
-After, using PowerShell commands and makinga Web Request, gets the private and public IP address and the Host Name of the machine. This data gets stored in a CSV file.
+After, using PowerShell commands and making a Web Request, gets the private and public IP address and the Host Name of the machine. This data gets stored in a CSV file.
 
 ```
 📂SSID_Profiles.zip
@@ -48,7 +48,6 @@ We have a directory called `Profiles/` with 4 SSID Profiles, in XML files.
 ┣ 📜Wi-Fi-Mi 11i.xml
 ┗ 📜Wi-Fi-iPhone 6s.xml
 ```
-
 
 To extract the data from those XML files, we will run the script, specifying the `Profiles/` directory.
 
