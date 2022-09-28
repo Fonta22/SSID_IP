@@ -25,10 +25,45 @@ After, using PowerShell commands and makinga Web Request, gets the private and p
 ```
 
 ### CSV Example
+
 | Host Name  | Public IP   | Private IP    |
 |------------|-------------|---------------|
 | HOSTNAME   | `X.X.X.X`   | `192.168.X.X` |
 
 ## Exctracting data from XML
 
-To exctract the important data from 
+To exctract the important data from the XML files, run [Extract-SSID.py](https://github.com/Fonta22/SSID_IP/blob/main/extract/Extract-SSID.py), located in the `extract/` directory.
+
+This script will create a **CSV** file with all the important data in the XML files.
+
+When running it, you can specify the path where the XML files are. If you don't specify any, it will search for XML files in the directory where you run the script.
+
+### Example
+
+We have a directory called `Profiles/` with 4 SSID Profiles, in XML files.
+
+```
+📂Profiles
+┣ 📜Wi-Fi-Home.xml
+┣ 📜Wi-Fi-Mi 11i.xml
+┗ 📜Wi-Fi-iPhone 6s.xml
+```
+
+
+To extract the data from those XML files, we will run the script, specifying the `Profiles/` directory.
+
+```powershell
+$ python Extract-SSID.py ./Profiles/
+```
+
+This will generate a **CSV** file, that will look like this.
+
+| Name      | Key Material    | Protected |
+|-----------|-----------------|-----------|
+| Home      | home_key_2022   | False     |
+| Mi 11i    | redmi2021       | False     |
+| iPhone 6s | Xavier1971      | False     |
+
+- `Name` - SSID Name
+- `Key Material` - SSID Key
+- `Protected` - True / False
